@@ -94,11 +94,18 @@ public class DinCryptoAndSecurity {
 	}
 
 	public void processMessageDigest() {// ex. SHA-1, SHA-256
+		 String theHugeMessage = "message that is sent of size 10MB";
+		 
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			System.out.println("MessageDigest Algo:" + md.getAlgorithm());
 			System.out.println("MessageDigest Provider:" + md.getProvider());
+			md.update(theHugeMessage.getBytes());
+			byte[] digiSignature = md.digest();
 			
+			//sendMessageToServer(theHugeMessage, encryptedDigitalSignature);
+			// the Messsage Digest is useful as we no need to encrypt entire Huge message
+			System.out.println();
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -228,6 +235,9 @@ public class DinCryptoAndSecurity {
 
 	public void processMac() {// Message Authentication Code(MAC)
 		try {
+			//Mac is generally used to verify the integrity of the data sent over network
+			// the signature is calculated by using MAC at server side and is encrypted using Key
+			// at other side, cliet side, the same process is reversed ... 
 			Mac mac = Mac.getInstance("HmacMD5");//Mac by Hashing 
 			System.out.println("Mac Algo:" + mac.getAlgorithm());
 			System.out.println("Mac Provider:" + mac.getProvider());
