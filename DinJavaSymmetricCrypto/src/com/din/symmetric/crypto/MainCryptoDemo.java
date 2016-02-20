@@ -7,25 +7,21 @@ public class MainCryptoDemo {
 	        String initVector = "RandomInitVector"; // 16 bytes IV
 	        DinCryptoAndSecurity cryptoAndSecurity = new DinCryptoAndSecurity();
 	        
-	        String sourceString = "Hello World";
+	        /*String sourceString = "Hello World";
 	        System.out.println("sourceString:" + sourceString);
 	       
 	        String encrypted =  cryptoAndSecurity.encrypt(encryptionKey, initVector, sourceString);
 	       System.out.println("encrypted string:" + encrypted);
 	      
 	       String decrypted = cryptoAndSecurity.decrypt("dinesh@masthaiah", initVector,encrypted);
-	        System.out.println("decrypted string:" + decrypted);
-	        
-	        cryptoAndSecurity.processCipher();
-	        cryptoAndSecurity.processDigitalSignature();
-	        cryptoAndSecurity.processKeyAgreement();
-	        cryptoAndSecurity.processKeyFactory();
-	        cryptoAndSecurity.processKeyPairGenerator();
-	       cryptoAndSecurity.processKeyStore();
-	        cryptoAndSecurity.processMac();
-	        cryptoAndSecurity.processMessageDigest();
-	        cryptoAndSecurity.processSecretyKeyFactory();
-	        cryptoAndSecurity.processCryptographyServiceProviders();
+	        System.out.println("decrypted string:" + decrypted);*/
+	       // cryptoAndSecurity.loadCertAndGetPrivateKey();
+	       
+	        //cryptoAndSecurity.demoPubKeyEncryption();
+	       // cryptoAndSecurity.demoMacForIntegrity();
+	       // cryptoAndSecurity.demoMessageDigestForIntegrity();
+	        //cryptoAndSecurity.loadJavaKeystoreAndExtractKeys();
+	        cryptoAndSecurity.generateKeysFromKeyPairGenerator();
 	    }
 
 }
